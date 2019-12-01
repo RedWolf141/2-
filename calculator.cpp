@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void gesan (double a, double b, double c, double flag, double x1, double x2) //근의 공식 대입
+void gesan (double &a, double &b, double &c, double &flag, double &x1, double &x2) //근의 공식 대입
 {
   /*
  flag(a,b,c) (근의 개수)에 따라
