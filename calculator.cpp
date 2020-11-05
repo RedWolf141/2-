@@ -94,7 +94,7 @@ void getEqubation_2()
 {
 	
 	printf("ax^2+bx+c=0 의 형태 일차방정식을 입력해주세요.");
-	scanf("%d %d %d", &equbation.input_x1,&equbation.input_x2, &equbation.input_x3);
+	scanf("%lf %lf %lf", &equbation.input_x1,&equbation.input_x2, &equbation.input_x3);
 	double a = equbation.input_x1;
 	double b = equbation.input_x2;
 	double c = equbation.input_x3;
@@ -113,9 +113,10 @@ void getEqubation_2()
 	{
 		answer.x1=(-b+sqrt(b*b-4*a*c))/2*a;
 		answer.x2=(-b-sqrt(b*b-4*a*c))/2*a;
+		printf("%lf %lf", answer.x1, answer.x2);
 	}
 	
-	printf("%lf %lf", answer.x1, answer.x2);
+	
 }
 
 
