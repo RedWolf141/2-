@@ -47,9 +47,10 @@ f(X)=(x-a)Q(x)형태로 조립제법
 
 int main()
 {
-	printf("차수를 입력해주세요");
+	printf("-------------------\n");
+	printf("차수를 입력해주세요.\n현재 입력 가능한 차수는 2차까지 가능합니다\n");
 	scanf("%d",&equbation.demension);
-
+	printf("-------------------\n");
 	switch (equbation.demension) {
 		case 1:
 			getEqubation_1();
@@ -73,7 +74,7 @@ int main()
 
 void getEqubation_1()
 {
-	printf("ax+b=0 의 형태 일차방정식을 입력해주세요.");
+	printf("ax+b=0 의 형태 일차방정식을 입력해주세요.\n");
 	scanf("%d %d", &equbation.input_x1,&equbation.input_x2);
 	double a = equbation.input_x1;
 	double b = equbation.input_x2;
@@ -82,7 +83,8 @@ void getEqubation_1()
 		strcpy(equbation.error,"CHZ");
 	}
 
-	else {
+	else
+	{
 		answer.x1=-b/a;
 		printf("방정식의 해는 = %lf", answer.x1);
 	}
