@@ -1,7 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "equbation.h"
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+
+extern double cube_x1;
+extern double cube_x2;
 
 void getEqubation_1();
 void getEqubation_2();
@@ -20,12 +24,14 @@ struct information
 	double input_x3;
 	char error[40];
 }equbation;
+
 /*
 error 모음집
  //SDE= set Dememsion Error 1차, 2차 3차 이외의 차수가 입력됬을때
  CHZ=Coefficient of highest order term is Zero 최고차항의 계수가 0
  IR=Imaginary Root 
  */
+ 
 struct key
 {
 	double x1;
@@ -49,8 +55,16 @@ int main()
 {
 	printf("-------------------\n");
 	printf("차수를 입력해주세요.\n현재 입력 가능한 차수는 2차까지 가능합니다\n");
-	scanf("%d",&equbation.demension);
+	scanf("%d",&equbation.demension); // 차수 입력 
 	printf("-------------------\n");
+	/*
+	차수에 따라 1차, 2차, 3차 방정식 함수 호출
+	
+	1차 getEqubation_1()
+	2차 getEqubation_2()
+	3차 getEqubation_3() (준비중) 
+	*/
+	 
 	switch (equbation.demension) {
 		case 1:
 			getEqubation_1();
@@ -64,10 +78,9 @@ int main()
 		default:
 			strcpy(equbation.error,"SDE"); //SDE= set Dememsion Error
 			break;
-
-
 	}
 
+	
 
 	
 }
@@ -129,7 +142,7 @@ getEqubation_2();
 //추가 예정
 }
 
-double eq_helper(double a, double b, double c)
+/* double eq_helper(double a, double b, double c)
 {
 	return b*b-4*a*c;
-}
+} */
